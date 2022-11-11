@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>快捷场所码</title>
+</head>
+
+<body>
+    <table id="table" border="1" cellspacing="2" align="center" onclick="tabClick();">
+        <thead>
+            <tr>
+                <th>省份</th>
+                <th>城市</th>
+                <th>场所</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center">浙江</td>
+                <td align="center">杭州</td>
+                <td align="center">紫云山庄</td>
+                <td align="center">跳转</td>
+            </tr>
+            <tr>
+                <td align="center">浙江</td>
+                <td align="center">杭州</td>
+                <td align="center">国自机器人</td>
+                <td align="center">跳转</td>
+            </tr>
+            <tr>
+                <td align="center">-</td>
+                <td align="center">-</td>
+                <td align="center">-</td>
+                <td align="center">link</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var links = [
+            "alipays://platformapi/startapp?appId=2021002175684865&page=pages%2Findex%2Findex&nbupdate=syncforce&query=communityCode%3D3301110060011489091124452663299",
+            "alipays://platformapi/startapp?appId=2021002175684865&page=pages%2Findex%2Findex&nbupdate=syncforce&query=communityCode%3D3301110062151491318439087570944",
+        ];
+
+
+        function tabClick() {
+            var td = event.srcElement; // 通过event.srcElement 获取激活事件的对象 td
+            if (td.parentElement.rowIndex == 0 || td.parentElement.rowIndex > 1) {
+                return;
+            }
+            if (td.cellIndex != 3) {
+                return;
+            }
+
+            window.location.href = links[td.parentElement.rowIndex - 1];
+            console.log(td.parentElement.rowIndex);
+        }
+    </script>
+</body>
+
+</html>
