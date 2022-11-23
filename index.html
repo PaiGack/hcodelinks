@@ -55,8 +55,9 @@
                 return;
             }
 
-            window.location.href = links[td.parentElement.rowIndex - 1];
             console.log(td.parentElement.rowIndex);
+            console.log(links[td.parentElement.rowIndex - 1]);
+            window.location.href = links[td.parentElement.rowIndex - 1];
         }
     </script>
 </body>
