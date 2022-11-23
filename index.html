@@ -48,7 +48,7 @@
 
         function tabClick() {
             var td = event.srcElement; // 通过event.srcElement 获取激活事件的对象 td
-            if (td.parentElement.rowIndex == 0 || td.parentElement.rowIndex > 1) {
+            if (td.parentElement.rowIndex == 0 || td.parentElement.rowIndex >= links.length) {
                 return;
             }
             if (td.cellIndex != 3) {
